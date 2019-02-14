@@ -1,0 +1,7 @@
+
+Import('env')
+
+sources = ['register_types.cpp','device_check.mm', 'ios/src/ios_device.mm']
+
+env.add_source_files(env.modules_sources, sources)
+
