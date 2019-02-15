@@ -6,7 +6,6 @@ func _ready():
 	if(Engine.has_singleton("DeviceCheck")):
 	  device_check = Engine.get_singleton("DeviceCheck")
 
-# Check if 
 func _cb_supported_btn():
 	var message = 'No DC SDK present'
 
