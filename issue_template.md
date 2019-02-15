@@ -1,4 +1,4 @@
-**OS target (Android/iOS):**
+**OS target (iOS):**
 
 
 **Godot version:**
