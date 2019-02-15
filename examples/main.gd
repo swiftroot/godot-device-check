@@ -1,14 +1,16 @@
 extends Control
 
-onready var dc = DeviceCheck.new()
+var device_check = null
 
 func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if(Engine.has_singleton("DeviceCheck")):
+	  device_check = Engine.get_singleton("DeviceCheck")
 
 # Check if 
 func _cb_supported_btn():
-	$panel/supported_label.text = str("Supported?: ", dc.is_supported())
+	var message = 'No DC SDK present'
+
+	if device_check != null:
+		message = str("Supported?: ", device_check.is_supported())
+		
+	$panel/supported_label.text = message 
