@@ -1,12 +1,15 @@
-/* device_check.h */
+/*
+device_check.h 
+Copyright (c) 2019 Alek Mlynek, Swift Root Inc.
+
+C++ class for connecting Godot and the IOSDevice class. 
+*/
 
 #ifndef DEVICE_CHECK_H
 #define DEVICE_CHECK_H
 
 #include "core/reference.h"
 
-// typedef IOSDevicek *iosDevice;
-//
 #ifdef __OBJC__
 @class IOSDevice;
 typedef IOSDevice *iosDevicePointer;
@@ -23,9 +26,11 @@ class DeviceCheck : public Reference {
 	protected:
 		static void _bind_methods();
 	public:
+		void init(int instanceId);
 		bool is_supported();
+		void get_token();
 
 		DeviceCheck();
-		~DeviceCheck();
+		// ~DeviceCheck();
 };
 #endif

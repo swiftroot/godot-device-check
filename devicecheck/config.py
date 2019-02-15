@@ -1,5 +1,5 @@
-def can_build(plat):
-	return plat=="iphone"
+def can_build(platform):
+	return platform=="iphone"
 
 def configure(env):
 	if env['platform'] == "iphone":
